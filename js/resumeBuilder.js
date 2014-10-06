@@ -18,18 +18,55 @@ var bio = {
 	bioPic: "images/fry.jpg"
 };
 
+var work = {
+	jobs: [
+		{
+			employer: "ETHZ Zürich",
+			title: "PhD candidate",
+			description: "lab automation",
+			dates: "2011 - present",
+			city: "Basel, Switzerland"
+		}
+	]
+};
+
+var education = {
+	"schools": [
+		{
+			name: "Lansing Community College (during high school)",
+			city: "Lansing, MI, USA",
+			degree: "Associate",
+			major: ["Electronics", "Computer Science"]
+		},
+		{
+			name: "Michigan State University",
+			city: "Lansing, MI, USA",
+			degree: "BA",
+			major: ["Interdisciplinary Humanities"]
+			minors: ["Computer Science", "Linguistics", "German"]
+		},
+		{
+			name: "ETHZ Zürich",
+			city: "Zürich, Switzerland",
+			degree: "MS",
+			major: ["Bioinformatics"]
+		}
+	]
+};
+
+var projects = {
+	projects: [
+		{
+			title: "funky",
+			dates: "2014",
+			description: "funky funky"
+		}
+	]
+};
+
+/*
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-
-var work = {};
-work.position = "PhD candidate";
-work.employer = "ETHZ Zürich";
-work.city = "Basel, Switzerland";
-
-var education = {};
-education["name"] = "ETHZ Zürich";
-education["years"] = "2007-2010";
-education["city"] = "Zürich, Switzerland";
 
 $("#header").prepend(formattedRole).prepend(formattedName);
 
@@ -39,4 +76,5 @@ $("#main")
   //.append(HTMLskills.replace("%data%", bio.skills))
   .append(HTMLschoolStart)
   .append(HTMLschoolName.replace("%data%", education.name));
+*/
 
