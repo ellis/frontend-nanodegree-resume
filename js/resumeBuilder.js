@@ -42,7 +42,7 @@ var education = {
 			name: "Michigan State University",
 			city: "Lansing, MI, USA",
 			degree: "BA",
-			major: ["Interdisciplinary Humanities"]
+			major: ["Interdisciplinary Humanities"],
 			minors: ["Computer Science", "Linguistics", "German"]
 		},
 		{
@@ -64,17 +64,38 @@ var projects = {
 	]
 };
 
-/*
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 $("#header").prepend(formattedRole).prepend(formattedName);
 
-$("#main")
+$("#topContacts")
   .append(HTMLemail.replace("%data%", bio.contacts.email))
-  .append(HTMLskillsStart)
-  //.append(HTMLskills.replace("%data%", bio.skills))
+  .append(HTMLgithub.replace("%data%", bio.contacts.github))
+
+$("#main")
   .append(HTMLschoolStart)
   .append(HTMLschoolName.replace("%data%", education.name));
-*/
 
+if (bio.skills && bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+	for (var i in bio.skills) {
+		$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+	}
+}
+
+function displayWork() {
+	if (work && work.jobs && work.jobs.length > 0) {
+		for (i in work.jobs) {
+			var job = work.jobs[i];
+			$("#workExperience").append(HTMLworkStart);
+			$(".work-entry:last")
+				.append(HTMLworkEmployer.replace("%data%", job.employer) + HTMLworkTitle.replace("%data%", job.title))
+				.append(HTMLworkDates.replace("%data%", job.dates))
+				.append(HTMLworkLocation.replace("%data%", job.city))
+				.append(HTMLworkDescription.replace("%data%", job.description));
+		}
+	}
+}
+
+displayWork();
