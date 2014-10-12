@@ -33,7 +33,7 @@ var work = {
 var education = {
 	"schools": [
 		{
-			name: "Lansing Community College (during high school)",
+			name: "(during high school) Lansing Community College",
 			city: "Lansing, MI, USA",
 			degree: "Associate",
 			major: ["Electronics", "Computer Science"]
@@ -99,3 +99,22 @@ function displayWork() {
 }
 
 displayWork();
+
+$(document).click(function(loc) {
+	logClicks(loc.pageX, loc.pageY);
+});
+
+$("#main").append(internationalizeButton);
+
+function inName(s) {
+	var l = s.split(' ');
+	console.log(l);
+	for (var i = 0; i <= l.length - 2; i++) {
+		l[i] = l[i][0].toUpperCase() + l[i].substr(1);
+	}
+	console.log(l);
+	l[l.length - 1] = l[l.length - 1].toUpperCase();
+	console.log(l);
+	var s2 = l.join(" ");
+	return s2;
+}
